@@ -1,35 +1,35 @@
 -- Création de la table 'université'
-CREATE TABLE universite (
-    id_universite int identity(1,1) primary key,
+CREATE TABLE IF NOT EXISTS universite (
+    id_universite int primary key auto_increment,
     nom_universite varchar(255),
 	sigle_université varchar(10),
     adresse_universite varchar(255)
 );
 -- Création de la table 'etudiant'
-CREATE TABLE etudiant (
-    id_etudiant int identity(1,1) primary key,
+CREATE TABLE IF NOT EXISTS etudiant (
+    id_etudiant int primary key auto_increment,
     nom_etudiant varchar(255),
     prenom_etudiant varchar(255)
 );
 
 -- Création de la table 'agent'
-CREATE TABLE agent (
-    id_agent int identity(1,1) primary key,
+CREATE TABLE IF NOT EXISTS agent (
+    id_agent int primary key auto_increment,
     nom_agent varchar(255),
     prenom_agent varchar(255)
 );
 
 -- Création de la table 'espace stationnement'
-CREATE TABLE espace_stationnement (
-    id_espace_stationnement int identity(1,1) primary key,
+CREATE TABLE IF NOT EXISTS espace_stationnement (
+    id_espace_stationnement int primary key auto_increment,
 	designation_espace_stationnement varchar(45) NULL,
     id_universite int,
     foreign key (id_universite) references universite(id_universite)
 );
 
 -- Création de la table 'allée'
-CREATE TABLE allee (
-    id_allee int identity(1,1) primary key,
+CREATE TABLE IF NOT EXISTS allee (
+    id_allee int primary key auto_increment,
     id_espace_stationnement INT,
     designation_alle varchar(45),
     sens_de_circulation varchar(15),
@@ -37,15 +37,15 @@ CREATE TABLE allee (
 );
 
 -- Création de la table 'place'
-CREATE TABLE place (
-    id_place int identity(1,1) primary key,
-	type_de_place varchar(15),
+CREATE TABLE IF NOT EXISTS place (
+    id_place int primary key auto_increment,
+	type_de_place enum('standard', 'personnes à mobilité réduite', 'véhicules électriques'),
     id_allee int,
     foreign key (id_allee) references allee(id_allee)
 );
 
 -- Création de la table 'place_réserveé'
-CREATE TABLE place_reservee (
+CREATE TABLE IF NOT EXISTS place_reservee (
     id_place int,
     id_etudiant int,
     date_reservation date,
@@ -57,7 +57,7 @@ CREATE TABLE place_reservee (
 );
 
 -- Création de la table 'espace_surveillé'
-CREATE TABLE espace_surveille (
+CREATE TABLE IF NOT EXISTS espace_surveille (
     id_agent int,
     id_espace_stationnement int,
     date_surveillance date,
@@ -69,15 +69,15 @@ CREATE TABLE espace_surveille (
 );
 
 -- Création de la table 'cours'
-CREATE TABLE cours (
-    id_cours int identity(1,1) primary key,
+CREATE TABLE IF NOT EXISTS cours (
+    id_cours int primary key auto_increment,
     nom_du_cours varchar(65),
     nombre_heures int
 );
 
 
 -- Création de la table 'cours_suivi'
-CREATE TABLE cours_suivi (
+CREATE TABLE IF NOT EXISTS cours_suivi (
     id_cours int,
     id_etudiant int,
     session varchar(50),
