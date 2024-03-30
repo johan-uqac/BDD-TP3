@@ -2,21 +2,10 @@
 
 ## Instructions
 
-```
-sh
-docker compose up -d
-```
+Lancer le script create_tables.sql pour créer les tables nécessaires à l'exécution du programme.
 
-**Open Azure Data studio and connect to the server using the following credentials**
+Lancer le script normalize.sql pour normaliser les données.
 
-- Server: localhost
-- User: sa
-- Password: MyAm4z1ngP4s5w0rd
+Lancer le script populate.sql pour peupler les tables.
 
-Create the database by executing the createTables.sql script
-
-Normalize it with normalize.sql
-
-Populate the database with populate.sql
-
-If you need to remove all, use removeAll.sql
+Il vous reste à lancer les scripts de 1 à 17 pour obtenir les résultats demandés.
