@@ -1,27 +1,27 @@
 -- Création de la table 'université'
 CREATE TABLE IF NOT EXISTS universite (
-    id_universite int primary key auto_increment,
+    id_universite int primary key,
     nom_universite varchar(255),
 	sigle_université varchar(10),
     adresse_universite varchar(255)
 );
 -- Création de la table 'etudiant'
 CREATE TABLE IF NOT EXISTS etudiant (
-    id_etudiant int primary key auto_increment,
+    id_etudiant int primary key,
     nom_etudiant varchar(255),
     prenom_etudiant varchar(255)
 );
 
 -- Création de la table 'agent'
 CREATE TABLE IF NOT EXISTS agent (
-    id_agent int primary key auto_increment,
+    id_agent int primary key,
     nom_agent varchar(255),
     prenom_agent varchar(255)
 );
 
 -- Création de la table 'espace stationnement'
 CREATE TABLE IF NOT EXISTS espace_stationnement (
-    id_espace_stationnement int primary key auto_increment,
+    id_espace_stationnement int primary key,
 	designation_espace_stationnement varchar(45) NULL,
     id_universite int,
     foreign key (id_universite) references universite(id_universite)
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS espace_stationnement (
 
 -- Création de la table 'allée'
 CREATE TABLE IF NOT EXISTS allee (
-    id_allee int primary key auto_increment,
+    id_allee int primary key,
     id_espace_stationnement INT,
     designation_alle varchar(45),
     sens_de_circulation varchar(15),
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS allee (
 
 -- Création de la table 'place'
 CREATE TABLE IF NOT EXISTS place (
-    id_place int primary key auto_increment,
+    id_place int primary key,
 	type_de_place enum('standard', 'personnes à mobilité réduite', 'véhicules électriques'),
     id_allee int,
     foreign key (id_allee) references allee(id_allee)
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS espace_surveille (
 
 -- Création de la table 'cours'
 CREATE TABLE IF NOT EXISTS cours (
-    id_cours int primary key auto_increment,
+    id_cours int primary key,
     nom_du_cours varchar(65),
     nombre_heures int
 );
