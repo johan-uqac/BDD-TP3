@@ -156,6 +156,7 @@ INSERT INTO espace_stationnement (id_espace_stationnement, numero_espace_station
     (47, 'Cyan', 2),
     (48, 'Fauve', 3);
     
+
 INSERT INTO allee (id_allee, id_espace_stationnement, numero_allee, sens_de_circulation)
 VALUES
     (1, 1, 'Alley 1', 'double'), (2, 2, 'Alley 2', 'droite'), (3, 3, 'Alley 3', 'gauche'), (4, 4, 'Alley 4', 'gauche'), (5, 5, 'Alley 5', 'double'),
@@ -163,11 +164,11 @@ VALUES
     (11, 11, 'Alley 11', 'gauche'), (12, 12, 'Alley 12', 'double'), (13, 13, 'Alley 13', 'droite'), (14, 14, 'Alley 14', 'droite'), (15, 15, 'Alley 15', 'double'),
     (16, 16, 'Alley 16', 'gauche'), (17, 17, 'Alley 17', 'gauche'), (18, 18, 'Alley 18', 'droite'), (19, 19, 'Alley 19', 'droite'), (20, 20, 'Alley 20', 'gauche'),
     (21, 21, 'Alley 21', 'gauche'), (22, 22, 'Alley 22', 'double'), (23, 23, 'Alley 23', 'double'), (24, 24, 'Alley 24', 'gauche'),
-    (1, 1, 'Alley A', 'gauche'), (2, 2, 'Alley B', 'droite'), (3, 3, 'Alley C', 'gauche'), (4, 4, 'Alley D', 'gauche'), (5, 5, 'Alley E', 'gauche'),
-    (6, 6, 'Alley F', 'droite'), (7, 7, 'Alley G', 'droite'), (8, 8, 'Alley H', 'double'), (9, 9, 'Alley I', 'gauche'), (10, 10, 'Alley J', 'double'),
-    (11, 11, 'Alley K', 'droite'), (12, 12, 'Alley L', 'droite'), (13, 13, 'Alley M', 'droite'), (14, 14, 'Alley N', 'gauche'), (15, 15, 'Alley O', 'gauche'),
-    (16, 16, 'Alley P', 'droite'), (17, 17, 'Alley Q', 'double'), (18, 18, 'Alley R', 'gauche'), (19, 19, 'Alley S', 'gauche'), (20, 20, 'Alley T', 'gauche'),
-    (21, 21, 'Alley U', 'double'), (22, 22, 'Alley V', 'droite'), (23, 23, 'Alley W', 'double'), (24, 24, 'Alley X', 'double');
+    (25, 1, 'Alley A', 'gauche'), (26, 2, 'Alley B', 'droite'), (27, 3, 'Alley C', 'gauche'), (28, 4, 'Alley D', 'gauche'), (29, 5, 'Alley E', 'gauche'),
+	(30, 6, 'Alley F', 'droite'), (31, 7, 'Alley G', 'droite'), (32, 8, 'Alley H', 'double'), (33, 9, 'Alley I', 'gauche'), (34, 10, 'Alley J', 'double'),
+	(35, 11, 'Alley K', 'droite'), (36, 12, 'Alley L', 'droite'), (37, 13, 'Alley M', 'droite'), (38, 14, 'Alley N', 'gauche'), (39, 15, 'Alley O', 'gauche'),
+	(40, 16, 'Alley P', 'droite'), (41, 17, 'Alley Q', 'double'), (42, 18, 'Alley R', 'gauche'), (43, 19, 'Alley S', 'gauche'), (44, 20, 'Alley T', 'gauche'),
+	(45, 21, 'Alley U', 'double'), (46, 22, 'Alley V', 'droite'), (47, 23, 'Alley W', 'double'), (48, 24, 'Alley X', 'double');
 
   INSERT INTO place (id_place, type_de_place, id_allee, numero_place, reserve) VALUES
     (1, 'standard', 1, 'A1', FALSE),
@@ -235,6 +236,7 @@ VALUES
     (29, 29, '2024-03-30', '16:00:00', '18:00:00'),
     (30, 30, '2024-03-30', '17:00:00', '19:00:00');
 
+
 INSERT INTO espace_surveille (id_agent, id_espace_stationnement, date_surveillance, heure_debut_surveillance, heure_fin_surveillance)
 VALUES
 	(1, 1, STR_TO_DATE('01/01/2024', '%d/%m/%Y'), '10:00:00', '23:00:00'),
@@ -265,8 +267,7 @@ VALUES
 	(26, 26, STR_TO_DATE('26/01/2024', '%d/%m/%Y'), '10:00:00', '23:00:00'),
 	(27, 27, STR_TO_DATE('27/01/2023', '%d/%m/%Y'), '10:00:00', '23:00:00'),
 	(28, 28, STR_TO_DATE('28/01/2023', '%d/%m/%Y'), '10:00:00', '23:00:00'),
-	(29, 29, STR_TO_DATE('29/01/2023', '%d/%m/%Y'), '10:00:00', '23:00:00'),
-	(30, 30, STR_TO_DATE('30/01/2023', '%d/%m/%Y'), '10:00:00', '23:00:00');
+	(29, 29, STR_TO_DATE('29/01/2023', '%d/%m/%Y'), '10:00:00', '23:00:00');
 
 
 INSERT INTO cours (id_cours, nom_du_cours, nombre_heures, heureDebut, heureFin, codeCours)
@@ -300,7 +301,7 @@ VALUES
 	(27, 'Augmented Reality Applications', 2, '14:00:00', '16:00:00', 'ARA101'),
 	(28, 'Embedded Systems Design', 2, '13:30:00', '15:30:00', 'ESD201'),
 	(29, 'Game Development Fundamentals', 2, '09:00:00', '11:00:00', 'GDF101');
-    
+
 INSERT INTO cours_suivi (id_cours, id_etudiant, session, local)
 VALUES
 	(1, 1, 'Spring 2024', 'Room A'),
@@ -331,6 +332,5 @@ VALUES
 	(26, 26, 'Spring 2024', 'Room Z'),
 	(27, 27, 'Spring 2024', 'Room AA'),
 	(28, 28, 'Spring 2024', 'Room AB'),
-	(29, 29, 'Spring 2024', 'Room AC'),
-	(30, 30, 'Spring 2024', 'Room AD');
+	(29, 29, 'Spring 2024', 'Room AC');
 
